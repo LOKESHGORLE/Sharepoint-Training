@@ -3,34 +3,36 @@
     $("#GetData").click(function () {
         alert("grf");
         $("#TestData").css('color', 'red');
-        $.ajax({url: 'StartService.asmx/HelloWorld',
-            type: 'post',
-            dataType: 'json',
-            async: true,
-            contentType: 'application/json;charset="utf-8"',
-            //contentType: "application/json",
-            //datatype: "json",
-            //var dat : JQuery.parse(data),
-            success: function (data) {
-                alert(data.d)
-            } 
-
-        });
+        
     });
+
+    $("#CallAjax").click(function() {
+             
+         AjaxCall();
+    });
+
+       
    
 
 });
 
-
-
-//function function11()
-//{
+function AjaxCall() {
     
-//    );
-//    // $("#TestData").css('color', 'red'  );
-//}
+    $.ajax({
+        url: 'StartService.asmx/HelloWorld',
+        type: 'POST',
+        dataType: 'json',
+        async: true,
+        contentType: 'application/json;charset="utf-8"',
+        //contentType: "application/json",
+        //datatype: "json",
+        //var dat : JQuery.parse(data),
+        success: function (data) {
+            alert(data.d)
+        }
 
-   
-    //$("#GetData").click() {
-    //    $("#TestData").attr{ 'style': 'color:red;' }
-    //}
+    });
+
+}
+
+
